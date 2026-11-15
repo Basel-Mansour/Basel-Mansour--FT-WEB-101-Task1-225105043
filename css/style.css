@@ -1,150 +1,316 @@
-<!--
-Name: Basel Mohamed Mansour
-Student ID: 225105043
--->
+*, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-<!DOCTYPE html>
-<html lang="en">
+:root {
+    --bg-color: #f5f6fa;
+    --surface-color: #ffffff;
+    --text-color: #202438;
+    --muted-color: #72798c;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basel Mohamed Mansour | Profile</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    --primary-color: #5965d9;
+    --primary-hover: #4652c6;
+    --btn-text: #ffffff;
 
-<body id="top">
+    --border-color: #e6e8f0;
+    --soft-color: #eef0ff;
 
-    <header class="site-header">
-        <div class="container">
-            <h1>Basel Mohamed Mansour</h1>
+    --shadow-color: rgba(32, 36, 56, 0.08);
+}
 
-            <nav class="navbar">
-                <a href="#top" class="brand">
-                    Basel Mohamed Mansour
-                </a>
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
 
-    <main class="container">
+.site-header {
+    padding-top: 40px;
+}
 
-        <section class="about-section" id="about">
-            <div class="profile-image">
-                <img src="images/me.jpg" alt="Photo of Basel Mohamed Mansour">
-            </div>
+.site-header h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-            <div class="about-content">
-                <p class="eyebrow">WELCOME TO MY PROFILE</p>
-                <h2>Hello, I'm Basel.</h2>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
 
-                <p>
-                    I'm Basel Mohamed Mansour, a Level 2 student
-                    at the Faculty of Computer Science and Engineering.
-                    I'm interested in Backend Development and enjoy
-                    programming with C#.
-                </p>
+.brand {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
 
-                <p>
-                    I like solving programming problems, learning
-                    new technologies, and improving my coding skills.
-                    Outside programming, I enjoy playing football.
-                </p>
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
 
-                <p class="github-link">
-                    You can find me on
-                    <a href="https://github.com/Basel-Mansour" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>.
-                </p>
+.nav-links a {
+    color: var(--muted-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-                <button id="themeBtn" type="button">
-                    Toggle Dark Mode
-                </button>
-            </div>
-        </section>
+.nav-links a:hover {
+    color: var(--primary-color);
+}
 
-        <section class="skills-section" id="skills">
-            <div class="section-heading">
-                <p class="eyebrow">WHAT I DO</p>
-                <h2>My Skills & Interests</h2>
-                <p>
-                    A few things I'm interested in and enjoy doing.
-                </p>
-            </div>
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    padding: 75px 0;
+}
 
-            <div class="cards-container">
-                <article class="card">
-                    <span class="card-number">01</span>
-                    <h3>Backend Development</h3>
-                    <p>
-                        I'm interested in backend development
-                        and learning how applications work
-                        behind the scenes.
-                    </p>
-                </article>
+.profile-image {
+    flex-shrink: 0;
+}
 
-                <article class="card">
-                    <span class="card-number">02</span>
-                    <h3>C# & Problem Solving</h3>
-                    <p>
-                        I enjoy programming with C# and
-                        solving problems to improve my
-                        logical thinking and coding skills.
-                    </p>
-                </article>
+.profile-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid var(--surface-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
 
-                <article class="card">
-                    <span class="card-number">03</span>
-                    <h3>Football</h3>
-                    <p>
-                        Football is one of my favorite hobbies.
-                        I enjoy playing it in my free time.
-                    </p>
-                </article>
-            </div>
-        </section>
+.about-content {
+    flex: 1;
+}
 
-        <section class="contact-section" id="contact">
-            <div class="section-heading">
-                <p class="eyebrow">GET IN TOUCH</p>
-                <h2>Contact Me</h2>
-                <p>
-                    Leave your name and email below.
-                </p>
-            </div>
+.eyebrow {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
 
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
+.about-content h2 {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
 
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-            </form>
-        </section>
+.about-content p {
+    color: var(--muted-color);
+    margin-bottom: 14px;
+}
 
-    </main>
+.github-link a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>
-                &copy; 2026 Basel Mohamed Mansour. All rights reserved.
-            </p>
-        </div>
-    </footer>
+.github-link a:hover {
+    text-decoration: underline;
+}
 
-    <script src="js/script.js"></script>
+button {
+    margin-top: 15px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-</body>
+button:hover {
+    background-color: var(--primary-hover);
+}
 
-</html>
+.skills-section {
+    padding: 35px 0 75px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted-color);
+}
+
+.cards-container {
+    display: flex;
+    gap: 22px;
+}
+
+.card {
+    flex: 1;
+    padding: 30px 25px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    background-color: var(--soft-color);
+    box-shadow: 0 12px 28px var(--shadow-color);
+}
+
+.card-number {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted-color);
+    font-size: 15px;
+}
+
+.contact-section {
+    padding: 35px 0 75px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.site-footer {
+    padding: 25px 0;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.site-footer p {
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+body.dark {
+    --bg-color: #171923;
+    --surface-color: #222634;
+    --text-color: #f1f2f7;
+    --muted-color: #b0b6c8;
+
+    --primary-color: #929bff;
+    --primary-hover: #7e89f2;
+    --btn-text: #171923;
+
+    --border-color: #373d50;
+    --soft-color: #30354c;
+
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 800px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header h1 {
+        font-size: 25px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
